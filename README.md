@@ -1,6 +1,6 @@
 # leaktk-jf
 
-A utility/lib for taking json and converting it to a directory tree for scanning.
+A utility/lib for taking JSON and converting it to a directory tree for scanning.
 
 ## WARNING - Very WIP
 
