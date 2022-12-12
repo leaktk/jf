@@ -1,0 +1,14 @@
+{
+  "key": "value",
+  "nested": {
+    "keys": "and values",
+    "even": [
+      "arrays",
+      {"with": "interesting"},
+      true,
+      null,
+      0,
+      "stuff"
+    ]
+  }
+}
