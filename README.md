@@ -13,26 +13,20 @@ This project isn't "ready" yet. It still needs:
 * Better error handling
 
 
-## Usage
+## Example Usage
 
 ```sh
 rm -rf /tmp/jf-example
 jf /tmp/jf-example < ./examples/file.json
-```
 
-Which should create something like this:
-
-```
+grep . -R /tmp/jf-example
+/tmp/jf-example/key:"value"
+/tmp/jf-example/nested/even/0:"arrays"
+/tmp/jf-example/nested/even/1/with:"interesting"
+/tmp/jf-example/nested/even/2:true
+/tmp/jf-example/nested/even/3:null
+/tmp/jf-example/nested/even/4:0
+/tmp/jf-example/nested/even/5:"stuff"
+/tmp/jf-example/nested/keys:"and values"
 /tmp/jf-example/
-├── key
-└── nested
-    ├── even
-    │   ├── 0
-    │   ├── 1
-    │   │   └── with
-    │   ├── 2
-    │   ├── 3
-    │   ├── 4
-    │   └── 5
-    └── keys
 ```
