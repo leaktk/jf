@@ -8,9 +8,8 @@ This project isn't "ready" yet. It still needs:
 
 * Cleaning up
 * Unittests
-* To be turned into a lib
-* Better security checks
-* Better error handling
+* Better security checks (potentially done but needs to be tested)
+* Return correct exit codes on an error
 
 
 ## Example Usage
