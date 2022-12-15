@@ -26,17 +26,22 @@ defaults to `^[\w\-\+]+$`.
 ## Example Usage
 
 ```sh
-rm -rf /tmp/jf-example
-jf /tmp/jf-example < ./examples/file.json
-
-grep . -R /tmp/jf-example
-/tmp/jf-example/key:"value"
-/tmp/jf-example/nested/even/0:"arrays"
-/tmp/jf-example/nested/even/1/with:"interesting"
-/tmp/jf-example/nested/even/2:true
-/tmp/jf-example/nested/even/3:null
-/tmp/jf-example/nested/even/4:0
-/tmp/jf-example/nested/even/5:"stuff"
-/tmp/jf-example/nested/keys:"and values"
-/tmp/jf-example/
+$ rm -rf /tmp/jf-example
+$ curl https://api.github.com/events | cargo run -- /tmp/jf-example/gh-events
+Writing /tmp/jf-example/gh-events/0/actor
+Writing /tmp/jf-example/gh-events/0/actor/avatar_url
+Writing /tmp/jf-example/gh-events/0/actor/display_login
+Writing /tmp/jf-example/gh-events/0/actor/gravatar_id
+Writing /tmp/jf-example/gh-events/0/actor/id
+Writing /tmp/jf-example/gh-events/0/actor/login
+Writing /tmp/jf-example/gh-events/0/actor/url
+Writing /tmp/jf-example/gh-events/0/created_at
+Writing /tmp/jf-example/gh-events/0/id
+Writing /tmp/jf-example/gh-events/0/payload
+Writing /tmp/jf-example/gh-events/0/payload/before
+Writing /tmp/jf-example/gh-events/0/payload/commits
+Writing /tmp/jf-example/gh-events/0/payload/commits/0/author
+Writing /tmp/jf-example/gh-events/0/payload/commits/0/author/email
+...snip...
+Files written to /tmp/jf-example/gh-events
 ```
