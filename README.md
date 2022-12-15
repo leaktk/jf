@@ -4,12 +4,22 @@ A utility/lib for taking JSON and converting it to a directory tree for scanning
 
 ## WARNING - Very WIP
 
-This project isn't "ready" yet. It still needs:
+This project isn't ready yet.
 
-* Cleaning up
-* Unittests
+TODO:
+
+* Unit tests
+* Make arg parsing a little cleaner
 * Better security checks (potentially done but needs to be tested)
 * Return correct exit codes on an error
+
+Nice to Have:
+
+* Optionally provide your own regex with a `--valid-key-regex` flag that
+defaults to `^[\w\-]+$`.
+* Be able to run it in reverse to take a directory tree and turn it into JSON
+  * A dir full of only numbers with no missing numbers in a range would be
+    parsed as an array.
 
 
 ## Example Usage
