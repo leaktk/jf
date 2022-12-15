@@ -12,11 +12,12 @@ TODO:
 * Make arg parsing a little cleaner
 * Better security checks (potentially done but needs to be tested)
 * Return correct exit codes on an error
+* Replace println with `info!` statments
 
 Nice to Have:
 
 * Optionally provide your own regex with a `--valid-key-regex` flag that
-defaults to `^[\w\-]+$`.
+defaults to `^[\w\-\+]+$`.
 * Be able to run it in reverse to take a directory tree and turn it into JSON
   * A dir full of only numbers with no missing numbers in a range would be
     parsed as an array.

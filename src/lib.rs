@@ -6,7 +6,7 @@ use serde_json::Value;
 use std::io::{Error, ErrorKind};
 
 pub fn write_files(path: &Path, value: &Value) -> Result<(), Error> {
-    _write_files(&Regex::new(r"^[\w\-]+$").unwrap(), path, value)
+    _write_files(&Regex::new(r"^[\w\-\+]+$").unwrap(), path, value)
 }
 
 #[inline]
@@ -19,15 +19,20 @@ fn _write_files(key_re: &Regex, path: &Path, value: &Value) -> Result<(), Error>
         }
         Value::Object(map) => {
             for (key, value) in map.iter() {
+                let pathbuf = path.join(key);
+                let path = pathbuf.as_path();
+
+                println!("Writing {}", path.display());
+
                 // Validation to avoid tree traversal or other issues
                 if !key_re.is_match(key) {
                     return Err(Error::new(
                         ErrorKind::InvalidInput,
-                        r"Keys must match: ^[\w\-]+$",
+                        r"Keys must match: ^[\w\-\+]+$",
                     ));
                 }
 
-                _write_files(key_re, &path.join(key).as_path(), value)?;
+                _write_files(key_re, path, value)?;
             }
         }
         _ => {
