@@ -6,15 +6,15 @@ use serde_json::Value;
 use std::io::{Error, ErrorKind};
 
 pub fn write_files(path: &Path, value: &Value) -> Result<(), Error> {
-    _write_files(Regex::new(r"^[\w\-]+$").unwrap(), path, value)
+    _write_files(&Regex::new(r"^[\w\-]+$").unwrap(), path, value)
 }
 
 #[inline]
-fn _write_files(key_re: Regex, path: &Path, value: &Value) -> Result<(), Error> {
+fn _write_files(key_re: &Regex, path: &Path, value: &Value) -> Result<(), Error> {
     match value {
         Value::Array(array) => {
             for (i, value) in array.iter().enumerate() {
-                _write_files(key_re, path.join(i.to_string()).as_path(), value)?;
+                _write_files(&key_re, path.join(i.to_string()).as_path(), value)?;
             }
         }
         Value::Object(map) => {
