@@ -1,7 +1,16 @@
 [package]
 name = "leaktk-jf"
-version = "0.1.0"
+version = "0.0.0"
 edition = "2021"
+license = "MIT"
+description = "A util/lib for writing JSON to disk as separate files"
+documentation = "https://github.com/leaktk/jf"
+homepage = "https://github.com/leaktk/jf"
+repository = "https://github.com/leaktk/jf"
+readme = "README.md"
+exclude = [
+    "examples/*",
+]
 
 [dependencies]
 serde = "1.0"
